@@ -87,7 +87,7 @@ namespace RampScriptTool
                 for (int i = 0; i < measures; i++)
                 {
                     sb.AppendLine("Measure");
-                    sb.AppendLine("wait,1");
+                    sb.AppendLine("wait,3");
                 }
 
                 totalMeasures += measures;
