@@ -1,0 +1,41 @@
+﻿<Window x:Class="RampScriptTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ramp Script Tool" Height="450" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Row="0" Margin="0,0,0,10">
+            <UniformGrid Columns="2" Rows="7" Margin="0,0,0,10">
+                <TextBlock Text="Start Current:" VerticalAlignment="Center"/>
+                <TextBox Name="txtStart" />
+                <TextBlock Text="End Current:" VerticalAlignment="Center"/>
+                <TextBox Name="txtEnd" />
+                <TextBlock Text="Step Interval:" VerticalAlignment="Center"/>
+                <TextBox Name="txtStep" />
+                <TextBlock Text="Wait after ramp (sec):" VerticalAlignment="Center"/>
+                <TextBox Name="txtWaitRamp" />
+                <TextBlock Text="Measures per step:" VerticalAlignment="Center"/>
+                <TextBox Name="txtMeasures" />
+                <TextBlock Text="Amps per sec:" VerticalAlignment="Center"/>
+                <TextBox Name="txtAmpsPerSec" />
+                <TextBlock Text="Total Measures:" VerticalAlignment="Center"/>
+                <TextBox Name="txtTotalMeasures" IsReadOnly="True" Background="#FFF0F0F0"/>
+            </UniformGrid>
+            <Button Name="btnGenerate" Width="150" Margin="0,5,0,0" Click="BtnGenerate_Click">Generate &amp; Preview</Button>
+        </StackPanel>
+
+        <TextBox Grid.Row="1" Name="txtOutput" Margin="0,0,0,10" 
+                 AcceptsReturn="True" VerticalScrollBarVisibility="Visible"
+                 HorizontalScrollBarVisibility="Visible" FontFamily="Consolas" FontSize="12"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+            <Button Name="btnSave" Width="100" Margin="0,0,10,0" Click="BtnSave_Click">Save to File</Button>
+            <Button Name="btnClose" Width="100" Click="BtnClose_Click">Close</Button>
+        </StackPanel>
+    </Grid>
+</Window>
